@@ -35,7 +35,6 @@ Python, scikit-learn (KMeans, hierarchical clustering, silhouette score), SciPy,
 
 ## Dashboard Live dan Repository
 - Dashboard live: https://stuntingmapid.streamlit.app/
-- Kode sumber: https://github.com/dinahzhahirah/StuntingMapID
 
 ## Isi Repository
 - `stunting_dataset_2023.csv` — dataset yang sudah dibersihkan (34 provinsi, 7 indikator).
@@ -84,7 +83,6 @@ Python, scikit-learn (KMeans, hierarchical clustering, silhouette score), SciPy,
 
 ## Live Dashboard and Repository
 - Live dashboard: https://stuntingmapid.streamlit.app/
-- Source code: https://github.com/dinahzhahirah/StuntingMapID
 
 ## Repository Contents
 - `stunting_dataset_2023.csv` — cleaned dataset (34 provinces, 7 indicators).
