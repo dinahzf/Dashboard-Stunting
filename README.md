@@ -34,7 +34,7 @@ Peringkat prioritas lima tingkat memberikan pembuat kebijakan dasar berbasis dat
 Python, scikit-learn (KMeans, hierarchical clustering, silhouette score), SciPy, statsmodels (VIF), pandas, Streamlit (dashboard), Folium (peta interaktif).
 
 ## Dashboard Live dan Repository
-- Dashboard live: https://stuntingmapid.streamlit.app/
+- Dashboard live: https://stuntingmap.streamlit.app/
 
 ## Isi Repository
 - `stunting_dataset_2023.csv` — dataset yang sudah dibersihkan (34 provinsi, 7 indikator).
@@ -82,7 +82,7 @@ The five-tier priority ranking gives policymakers a data-driven basis for sequen
 Python, scikit-learn (KMeans, hierarchical clustering, silhouette score), SciPy, statsmodels (VIF), pandas, Streamlit (dashboard), Folium (interactive map).
 
 ## Live Dashboard and Repository
-- Live dashboard: https://stuntingmapid.streamlit.app/
+- Live dashboard: https://stuntingmap.streamlit.app/
 
 ## Repository Contents
 - `stunting_dataset_2023.csv` — cleaned dataset (34 provinces, 7 indicators).
