@@ -1,51 +1,3 @@
-# StuntingMapID: Dashboard Clustering Interaktif untuk Provinsi di Indonesia
-
-## Ringkasan
-StuntingMapID mengelompokkan 34 provinsi di Indonesia berdasarkan karakteristik sosio-ekonomi dan kesehatan yang berkaitan dengan stunting, kemudian menyajikan hasilnya melalui dashboard interaktif yang dapat dieksplorasi. Proyek ini menerapkan beberapa metode clustering pada tujuh indikator terkait stunting (prevalensi, kemiskinan, kesehatan ibu, sanitasi, serta akses air dan layanan kesehatan), memvalidasi hasil cluster secara statistik, kemudian menerjemahkannya menjadi kerangka prioritas intervensi.
-
-## Tujuan
-- Mengelompokkan provinsi di Indonesia berdasarkan kemiripan karakteristik penyebab stunting menggunakan analisis cluster.
-- Membandingkan Hierarchical Clustering (single, complete, average, dan ward's linkage) dengan K-Means untuk menemukan metode pengelompokan yang paling andal.
-- Membangun dashboard interaktif yang mengubah hasil clustering menjadi alat praktis untuk memprioritaskan intervensi penurunan stunting.
-
-## Data
-- Data sekunder tahun 2023 dari Badan Pusat Statistik (BPS) dan Kementerian Kesehatan.
-- Tujuh variabel: prevalensi stunting, penduduk usia 15+ tidak tamat SD, persentase penduduk miskin, prevalensi ibu hamil Kekurangan Energi Kronis (KEK), akses sanitasi layak, akses air minum layak, dan akses layanan kesehatan dasar.
-- Setelah menghapus 4 provinsi dengan data hilang, 34 dari 38 provinsi dipertahankan untuk analisis.
-
-## Metodologi
-1. Validasi dan reconciliation data: memeriksa duplikasi entri provinsi, menghitung jumlah missing value per variabel, dan menghapus baris yang tidak lengkap untuk memastikan dasar analisis yang bersih dan konsisten.
-2. Standarisasi seluruh variabel numerik menggunakan transformasi z-score, dilanjutkan dengan pengecekan multikolinearitas (VIF, seluruh nilai di bawah 10).
-3. Perhitungan matriks jarak Euclidean antar seluruh pasangan provinsi sebagai dasar clustering.
-4. Empat metode Hierarchical Clustering dan K-Means masing-masing dijalankan dan dibandingkan menggunakan silhouette score pada berbagai jumlah cluster (k = 2 hingga 7), didukung visualisasi dendrogram dan pairplot.
-5. Kualitas cluster dievaluasi menggunakan within-cluster variation (Sw), between-cluster variation (Sb), dan rasio Sw/Sb; metode terbaik lebih lanjut divalidasi dengan multiscale bootstrap resampling untuk memastikan stabilitas cluster.
-6. Provinsi diberi peringkat risiko dan prioritas intervensi berdasarkan skor komposit dengan bobot yang sama untuk ketujuh indikator.
-
-## Temuan Utama
-- Complete Linkage dengan 5 cluster menghasilkan pengelompokan yang paling solid secara statistik maupun praktis, menggabungkan rasio Sw/Sb terendah (0,263) di antara metode hierarchical dengan stabilitas yang dikonfirmasi bootstrap (AU > 95% untuk 2 dari 5 cluster, stabilitas sedang untuk sisanya).
-- Cluster 1 (5 provinsi, termasuk Nusa Tenggara Timur dan provinsi-provinsi wilayah Papua) menunjukkan prevalensi stunting tertinggi (19,6%), kemiskinan tertinggi (17,6%), serta akses sanitasi dan kesehatan dasar terendah, menjadikannya prioritas intervensi utama.
-- Cluster 4 (11 provinsi) menunjukkan profil paling baik secara keseluruhan, dengan prevalensi stunting terendah (13%) dan akses air bersih tertinggi (92%), menjadikannya prioritas intervensi terendah.
-- Clustering K-Means juga diuji namun menunjukkan rasio Sw/Sb yang lebih tinggi (2,265) dibandingkan seluruh metode hierarchical, memperkuat Complete Linkage sebagai pendekatan yang lebih disukai untuk dataset ini.
-
-## Relevansi Bisnis/Pemerintahan
-Peringkat prioritas lima tingkat memberikan pembuat kebijakan dasar berbasis data untuk mengurutkan intervensi stunting, alih-alih menerapkan pendekatan seragam secara nasional. Provinsi pada cluster berisiko tertinggi dapat menjadi sasaran pertama untuk program gizi ibu, pengentasan kemiskinan, dan infrastruktur sanitasi, sementara provinsi berisiko rendah dapat beralih ke pemeliharaan dan peningkatan kualitas layanan. Dashboard publik mendukung transparansi dengan memungkinkan siapa pun memverifikasi provinsi mana termasuk dalam cluster mana beserta alasannya.
-
-## Tools & Libraries
-Python, scikit-learn (KMeans, hierarchical clustering, silhouette score), SciPy, statsmodels (VIF), pandas, Streamlit (dashboard), Folium (peta interaktif).
-
-## Dashboard Live dan Repository
-- Dashboard live: https://stuntingmap.streamlit.app/
-
-## Isi Repository
-- `stunting_dataset_2023.csv` — dataset yang sudah dibersihkan (34 provinsi, 7 indikator).
-- `StuntingMapID_Dashboard.py` / notebook — kode analisis lengkap dan dashboard Streamlit (preprocessing, clustering, validasi, visualisasi).
-- `README.md` — dokumentasi proyek dalam bahasa Inggris dan Indonesia.
-
-## Keterbatasan
-Empat provinsi dikeluarkan karena missing value, yang sedikit mengurangi cakupan nasional. Batas cluster, meskipun tervalidasi secara statistik, tetap mencerminkan skema pembobotan yang dipilih (bobot sama untuk ketujuh indikator) yang mungkin belum mencakup seluruh pertimbangan kebijakan yang relevan untuk provinsi tertentu.
-
----------------------------------------------------------------------------------
-
 # StuntingMapID: Interactive Clustering Dashboard for Indonesian Provinces
 
 ## Overview
@@ -81,7 +33,7 @@ The five-tier priority ranking gives policymakers a data-driven basis for sequen
 ## Tools & Libraries
 Python, scikit-learn (KMeans, hierarchical clustering, silhouette score), SciPy, statsmodels (VIF), pandas, Streamlit (dashboard), Folium (interactive map).
 
-## Live Dashboard and Repository
+## Live Dashboard
 - Live dashboard: https://stuntingmap.streamlit.app/
 
 ## Repository Contents
